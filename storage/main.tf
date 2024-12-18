@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    bucket         = "terraform-bucket-7891011"
+    bucket         = "terraform-bucket-78910"
     key            = "storage/terraform.tfstate"
     region         = "ap-south-1"
     encrypt        = true
@@ -13,8 +13,8 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "storage" {
-  bucket = "my-storage-bucket124"
+  bucket = "my-storage-bucket1245"
   tags = {
-    Name = "storage-bucket"
+    Name = "storage-buckets"
   }
 }
