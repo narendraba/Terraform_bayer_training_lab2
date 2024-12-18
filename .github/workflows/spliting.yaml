@@ -5,7 +5,7 @@ on:
     branches:
       - Master
 
- 
+
 jobs:
   terraform-networking:
     runs-on: ubuntu-latest
