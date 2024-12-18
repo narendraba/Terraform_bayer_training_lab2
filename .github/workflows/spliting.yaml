@@ -3,7 +3,7 @@ name: Terraform
 on:
   push:
     branches:
-      - main
+      - Master
  
 jobs:
   terraform-networking:
