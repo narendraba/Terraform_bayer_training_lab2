@@ -47,6 +47,7 @@ jobs:
       - name: 'Terraform Destroy'
         working-directory: ./compute
         run: terraform destroy -auto-approve
+        
       - name: 'Terraform Destroy'
         working-directory: ./storage
         run: terraform destroy -auto-approve
