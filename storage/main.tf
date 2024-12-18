@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    bucket         = "spliting-bucket"
+    bucket         = "spliting-bucket2"
     key            = "storage/terraform.tfstate"
     region         = "ap-south-1"
     encrypt        = true
