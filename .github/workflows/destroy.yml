@@ -36,12 +36,20 @@ jobs:
         working-directory: ./storage
         run: terraform init
         
+      - name: 'Terraform Init'
+        working-directory: ./networking
+        run: terraform init
+        
       - name: 'Terraform plan'
         working-directory: ./compute
         run: terraform plan
 
       - name: 'Terraform plan'
         working-directory: ./storage
+        run: terraform plan
+
+      - name: 'Terraform plan'
+        working-directory: ./networking
         run: terraform plan
 
       - name: 'Terraform Destroy'
@@ -50,5 +58,9 @@ jobs:
         
       - name: 'Terraform Destroy'
         working-directory: ./storage
+        run: terraform destroy -auto-approve
+
+      - name: 'Terraform Destroy'
+        working-directory: ./networking
         run: terraform destroy -auto-approve
 
