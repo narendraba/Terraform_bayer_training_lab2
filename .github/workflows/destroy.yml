@@ -4,7 +4,7 @@ on:
   workflow_dispatch # Manually trigger the destroy workflow
 
 jobs:
-  terraform-destroy:
+  terraform-destroy-compute:
     name: 'Destroy Infrastructure'
     runs-on: ubuntu-latest
 
@@ -29,15 +29,15 @@ jobs:
           aws-region: ap-south-1
 
       - name: 'Terraform Init'
-        run: |
-          terraform init
+        working-directory: ./compute
+        run: terraform init
         
 
       - name: 'Terraform plan'
-        run: |
-          terraform plan
+        working-directory: ./compute
+        run: terraform plan
         
 
       - name: 'Terraform Destroy'
-        run: |
-          terraform destroy -auto-approve
+        working-directory: ./compute
+        run: terraform destroy -auto-approve
