@@ -31,49 +31,23 @@ jobs:
       - name: 'Terraform Init'
         working-directory: ./compute
         run: terraform init
+
+      - name: 'Terraform Init'
+        working-directory: ./storage
+        run: terraform init
         
       - name: 'Terraform plan'
         working-directory: ./compute
         run: terraform plan
 
+      - name: 'Terraform plan'
+        working-directory: ./storage
+        run: terraform plan
+
       - name: 'Terraform Destroy'
         working-directory: ./compute
         run: terraform destroy -auto-approve
-
-  terraform-destroy-storage:
-    name:'Destroy Infrastructure'
-    runs-on:ubuntu-latest
-    
-    permissions:
-      id-token: write
-      contents: read
-
-    steps:
-      - name: 'Checkout Repository'
-        uses: actions/checkout@v4
-
-      - name: 'Set up Terraform'
-        uses: hashicorp/setup-terraform@v3
-        with:
-          terraform_version: '1.5.6'
-
-      - name: 'Configure AWS Credentials'
-        uses: aws-actions/configure-aws-credentials@v4
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
-          aws-region: ap-south-1
-
-      - name: 'Terraform Init'
+      - name: 'Terraform Destroy'
         working-directory: ./storage
-        run: terraform init
-            
-    
-          - name: 'Terraform plan'
-            working-directory: ./storage
-            run: terraform plan
-            
-  
-          - name: 'Terraform Destroy'
-            working-directory: ./storage
-            run: terraform destroy -auto-approve
+        run: terraform destroy -auto-approve
+
