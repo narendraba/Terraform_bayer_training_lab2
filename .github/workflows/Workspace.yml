@@ -1,4 +1,4 @@
-name: Terraform workspaces
+name: Terraform Workspaces
 
 on:
   push:
@@ -31,8 +31,9 @@ jobs:
       - name: Initialize Terraform
         run: terraform init
 
-      - name: Select Workspace
-        run: terraform workspace select ${{ env.TF_WORKSPACE }} || terraform workspace new ${{ env.TF_WORKSPACE }}
+      - name: Select or Create Workspace
+        run: |
+          terraform workspace select ${{ env.TF_WORKSPACE }} || terraform workspace new ${{ env.TF_WORKSPACE }}
 
       - name: Terraform Plan
         run: terraform plan -out=tfplan
