@@ -34,7 +34,7 @@ jobs:
         run: terraform plan
 
       - name: Terraform Apply
-        if: github.ref == 'refs/heads/main'
+        #if: github.ref == 'refs/heads/main'
         working-directory: ./networking
         run: terraform apply -auto-approve
 
@@ -64,7 +64,7 @@ jobs:
         run: terraform plan
 
       - name: Terraform Apply
-        if: github.ref == 'refs/heads/main'
+        #if: github.ref == 'refs/heads/main'
         working-directory: ./compute
         run: terraform apply -auto-approve
 
@@ -94,6 +94,6 @@ jobs:
         run: terraform plan
 
       - name: Terraform Apply
-        if: github.ref == 'refs/heads/main'
+        #if: github.ref == 'refs/heads/main'
         working-directory: ./storage
         run: terraform apply -auto-approve
