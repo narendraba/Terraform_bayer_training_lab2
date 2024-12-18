@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      TF_WORKSPACE: ${{ github.ref == 'refs/heads/Master' && 'production' || github.ref == 'refs/heads/staging' && 'staging' || 'development' }}
+      TF_WORKSPACE: ${{ github.ref == 'refs/heads/Master' && 'prod' || github.ref == 'refs/heads/staging' && 'staging' || 'development' }}
 
     steps:
       - name: Checkout code
@@ -31,8 +31,9 @@ jobs:
       - name: Initialize Terraform
         run: terraform init
 
-      - name: Select or Create Workspace
+      - name: Unset TF_WORKSPACE and Select or Create Workspace
         run: |
+          unset TF_WORKSPACE
           terraform workspace select ${{ env.TF_WORKSPACE }} || terraform workspace new ${{ env.TF_WORKSPACE }}
 
       - name: Terraform Plan
