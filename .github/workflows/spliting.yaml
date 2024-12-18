@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - Master
+
  
 jobs:
   terraform-networking:
