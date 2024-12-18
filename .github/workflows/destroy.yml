@@ -15,7 +15,7 @@ jobs:
     steps:
       - name: 'Checkout Repository'
         uses: actions/checkout@v4
-
+        
       - name: 'Set up Terraform'
         uses: hashicorp/setup-terraform@v3
         with:
@@ -32,11 +32,9 @@ jobs:
         working-directory: ./compute
         run: terraform init
         
-
       - name: 'Terraform plan'
         working-directory: ./compute
         run: terraform plan
-        
 
       - name: 'Terraform Destroy'
         working-directory: ./compute
@@ -45,7 +43,7 @@ jobs:
   terraform-destroy-storage:
     name:'Destroy Infrastructure'
     runs-on:ubuntu-latest
-
+    
     permissions:
       id-token: write
       contents: read
