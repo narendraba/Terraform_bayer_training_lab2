@@ -7,7 +7,7 @@ on:
       - Master
 
 jobs:
-  terraform-networking:
+  terraform-module-pvt-vpc:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -26,16 +26,16 @@ jobs:
           aws-region: ap-south-1
 
       - name: Terraform Init
-        working-directory: ./networking
+        working-directory: ./modules
         run: terraform init
 
       - name: Terraform Plan
-        working-directory: ./networking
+        working-directory: ./modules
         run: terraform plan
 
       - name: Terraform Apply
         #if: github.ref == 'refs/heads/main'
-        working-directory: ./networking
+        working-directory: ./modules
         run: terraform apply -auto-approve
 
   
