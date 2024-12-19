@@ -1,9 +1,10 @@
 name: Creating spliting infra task
 
 on:
-  push:
-    branches:
-      - Master
+  workflow_dispatch
+#  push:
+#    branches:
+#      - Master
 
 
 jobs:
