@@ -1,4 +1,4 @@
-name: Terraform
+name: Terraform workspace infra
 
 on:
   push:
