@@ -29,13 +29,13 @@ jobs:
           aws-region: ap-south-1
 
       - name: 'Terraform Init'
-        working-directory: ./modules-private-repo
+        working-directory: ./modules
         run: terraform init
         
       - name: 'Terraform plan'
-        working-directory: ./modules-private-repo
+        working-directory: ./modules
         run: terraform plan
 
       - name: 'Terraform Destroy'
-        working-directory: ./modules-private-repo
+        working-directory: ./modules
         run: terraform destroy -auto-approve
