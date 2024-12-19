@@ -1,4 +1,4 @@
-name: Terraform workspace infra
+name: Terraform workspace infra destroy
 
 on:
   push:
