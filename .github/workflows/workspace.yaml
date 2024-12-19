@@ -1,11 +1,11 @@
 name: Terraform workspace infra
 
 on:
-  push:
-    branches:
-      - Master
-      - development
-      - staging
+#  push:
+#    branches:
+#      - Master
+#      - development
+#      - staging
   pull_request:
     branches:
       - Master
