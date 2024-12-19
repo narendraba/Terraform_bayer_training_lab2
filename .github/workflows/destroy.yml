@@ -1,4 +1,4 @@
-name: 'Terraform AWS Infrastructure Deletion'
+name: 'Infrastructure Deletion for spliting task'
 
 on:
   workflow_dispatch # Manually trigger the destroy workflow
