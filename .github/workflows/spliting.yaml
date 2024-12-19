@@ -1,4 +1,4 @@
-name: Terraform
+name: Creating spliting infra task
 
 on:
   push:
