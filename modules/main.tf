@@ -1,5 +1,5 @@
 module "vpc" {
-  source = "git::ssh://git@github.com/narendraba/private_module_bayer.git//vpc-module"
+  source = "git::ssh://https://github.com/narendraba/private_module_bayer.git//VPC-module"
 
   cidr_block         = "10.0.0.0/16"
   public_subnets     = ["10.0.1.0/24", "10.0.3.0/24"]
